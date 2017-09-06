@@ -7,23 +7,41 @@
 import React, {Component} from 'react';
 import {
     AppRegistry,
-    Image,
-    StyleSheet
+    StyleSheet,
+    Text,
+    View
 } from 'react-native';
+import Instruction from "./js/page/instruction";
 
-class AndroidApp extends Component {
+
+
+export default class AndroidApp extends Component {
     render() {
         return (
-            <Image source={require('./img_source/extinguisher.png')} style={styles.large_pic}/>
+            <View>
+                <Instruction instruction="123" typeName="type2"/>
+            </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    large_pic: {
-        width: 310,
-        height: 220,
-    }
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF',
+    },
+    welcome: {
+        fontSize: 20,
+        textAlign: 'center',
+        margin: 10,
+    },
+    instructions: {
+        textAlign: 'center',
+        color: '#333333',
+        marginBottom: 5,
+    },
 });
 
 AppRegistry.registerComponent('AndroidApp', () => AndroidApp);
