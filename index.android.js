@@ -18,8 +18,8 @@ import Instruction from "./js/page/instruction";
 export default class AndroidApp extends Component {
     render() {
         return (
-            <View>
-                <Instruction instruction="123" typeName="type2"/>
+            <View style={styles.container}>
+                <Instruction instruction="1223123" typeName="type2"/>
             </View>
         );
     }
