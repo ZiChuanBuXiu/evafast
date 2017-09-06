@@ -19,7 +19,7 @@ export default class AndroidApp extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Instruction instruction="1223123" typeName="type2"/>
+                <Instruction instruction="1123123" typeName="type2"/>
             </View>
         );
     }
