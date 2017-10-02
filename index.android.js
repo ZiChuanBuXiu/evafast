@@ -13,6 +13,9 @@ import {
 } from 'react-native';
 import Instruction from "./js/page/instruction";
 import MapExample from "./js/page/map";
+import  PageOne from "./js/page/PageOne"
+import App from "./js/page/pageButton";
+
 
 
 
@@ -20,8 +23,9 @@ export default class AndroidApp extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <MapExample/>
+                <App/>
             </View>
+
         );
     }
 }
