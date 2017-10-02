@@ -23,7 +23,7 @@ export default class AndroidApp extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <App/>
+                <MapExample/>
             </View>
 
         );

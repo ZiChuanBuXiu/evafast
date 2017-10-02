@@ -27,11 +27,10 @@ class Instruction extends Component {
     render() {
         return (
             <View>
-                {/*<Text style={styles.singleimage}>{this.props.instruction}</Text>*/}
-                {images.Tool[this.props.typeName].images.map(function (image) {
+                <Text style={styles.titleText}>{this.props.instruction}</Text>
+                {images.extinguisher[this.props.typeName].images.map(function (image) {
                     return (<Image source={image}/>)
                 })}
-
             </View>
         );
     }
@@ -43,9 +42,6 @@ Instruction.propTypes = {
 };
 
 const styles = StyleSheet.create({
-    singleimage:{
-        backgroundColor:'#f0f8ff'
-    },
     baseText: {
         fontFamily: 'Cochin',
     },
