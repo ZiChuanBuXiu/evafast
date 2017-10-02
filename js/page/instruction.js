@@ -1,39 +1,41 @@
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
-import {Image, Text, View,StyleSheet, TouchableOpacity} from "react-native";
-import Video from "react-native-video";
+import {Image, Text, View,StyleSheet} from "react-native";
+
 let images = {
-    extinguisher: {
-        type1: {
-            images: [require("../image/extinguisher/type1/1.jpeg")]
+    Tool: {
+        extinguisher1: {
+            images: [require("../image/Tool/extinguisher1/1.png")]
         },
-        type2: {
-            images: [require("../image/extinguisher/type2/water-and-foam.jpg")]
+        extinguisher2: {
+            images: [require("../image/Tool/extinguisher2/2.png")]
+        },
+        firstAid: {
+            images:[require("../image/Tool/firstAid/firstaid.png")]
+        },
+        SosSign:{
+            images:[require("../image/Tool/SosSign/SOS.svg.png")]
         }
     }
-};
 
-
-class Instruction extends Component {
-
-    render() {
-        return (
-            <TouchableOpacity>
-                <View>
-                    <Text style={styles.titleText}>{this.props.instruction}</Text>
-                    {images.extinguisher[this.props.typeName].images.map(function (image) {
-                        return (<Image source={image}/>)
-                    })}
-                </View>
-            </TouchableOpacity>
-
-        );
-    }
 }
 
 
 
 
+class Instruction extends Component {
+    render() {
+        return (
+            <View>
+                {/*<Text style={styles.singleimage}>{this.props.instruction}</Text>*/}
+                {images.Tool[this.props.typeName].images.map(function (image) {
+                    return (<Image source={image}/>)
+                })}
+
+            </View>
+        );
+    }
+}
 
 Instruction.propTypes = {
     instruction: PropTypes.string,
@@ -41,12 +43,8 @@ Instruction.propTypes = {
 };
 
 const styles = StyleSheet.create({
-    backgroundVideo: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        bottom: 0,
-        right: 0,
+    singleimage:{
+        backgroundColor:'#f0f8ff'
     },
     baseText: {
         fontFamily: 'Cochin',
@@ -54,6 +52,8 @@ const styles = StyleSheet.create({
     titleText: {
         fontSize: 20,
         fontWeight: 'bold',
+        width:50,
+        height:50
     },
 });
 
