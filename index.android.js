@@ -12,6 +12,7 @@ import {
     View
 } from 'react-native';
 import Instruction from "./js/page/instruction";
+import MapExample from "./js/page/map";
 
 
 
@@ -19,7 +20,7 @@ export default class AndroidApp extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Instruction instruction="1123123" typeName="type2"/>
+                <MapExample/>
             </View>
         );
     }
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        backgroundColor: '#ffa82c',
     },
     welcome: {
         fontSize: 20,
