@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
-import {Image, Text, View,StyleSheet} from "react-native";
-
+import {Image, Text, View,StyleSheet, TouchableOpacity} from "react-native";
+import Video from "react-native-video";
 let images = {
     extinguisher: {
         type1: {
@@ -15,17 +15,25 @@ let images = {
 
 
 class Instruction extends Component {
+
     render() {
         return (
-            <View>
-                <Text style={styles.titleText}>{this.props.instruction}</Text>
-                {images.extinguisher[this.props.typeName].images.map(function (image) {
-                    return (<Image source={image}/>)
-                })}
-            </View>
+            <TouchableOpacity>
+                <View>
+                    <Text style={styles.titleText}>{this.props.instruction}</Text>
+                    {images.extinguisher[this.props.typeName].images.map(function (image) {
+                        return (<Image source={image}/>)
+                    })}
+                </View>
+            </TouchableOpacity>
+
         );
     }
 }
+
+
+
+
 
 Instruction.propTypes = {
     instruction: PropTypes.string,
@@ -33,6 +41,13 @@ Instruction.propTypes = {
 };
 
 const styles = StyleSheet.create({
+    backgroundVideo: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0,
+    },
     baseText: {
         fontFamily: 'Cochin',
     },
