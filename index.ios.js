@@ -49,11 +49,7 @@ const AndroidApp = () => {
                             title="MAP"
                             initial
                         />
-                        <Scene
-                            key="Extinguisher"
-                            component={Extinguisher}
-                            title="How to use Extinguisher"
-                        />
+
                         <Scene
                             key="FirstAid"
                             component={FirstAid}
@@ -82,15 +78,15 @@ const AndroidApp = () => {
 
                     <Scene key="um2" title="UM2" icon={TabIcon}>
                         <Scene
-                            key="gray2"
-                            component={ScarletScreen}
-                            title="gray2"
+                            key="FirstAid1"
+                            component={FirstAid}
+                            title="FirstAid1"
                             initial
                         />
                         <Scene
-                            key="gray2"
-                            component={GrayScreen}
-                            title="Gray3"
+                            key="Extinguisher"
+                            component={Extinguisher}
+                            title="How to use Extinguisher"
                         />
                     </Scene>
 
