@@ -13,19 +13,13 @@ import {
 import { Actions } from 'react-native-router-flux';
 
 
-let image = require("./1.jpeg");
-let Video1 = require("./UseOfExtinguisher.mp4");
+let image = require("../resources/image/bandage/1.jpeg");
+let Video1 = require("../resources/video/UseOfExtinguisher.mp4");
 
-const Extinguisher = () => {
+const ScarletScreen = () => {
     return (
 
         <View style={styles.container}>
-            <Text
-                style={styles.welcome}
-            >
-              Please Calm Down!
-            </Text>
-
             <Video source={Video1} // Looks for .mp4 file (background.mp4) in the given expansion version.
                    rate={1.0}                   // 0 is paused, 1 is normal.
                    volume={1.0}                 // 0 is muted, 1 is normal.
@@ -40,12 +34,19 @@ const Extinguisher = () => {
                    onError={this.videoError}    // Callback when video cannot be loaded
                    style={styles.backgroundVideo} />
 
+            <Image source={image} style={{width:200,height:200}}  />
+            <Text
+                style={styles.welcome}
+                onPress={() => Actions.gray()} // New Code
+            >
+                Scarlet Screen
+            </Text>
 
         </View>
     );
 }
 
-Extinguisher.propTypes = {
+ScarletScreen.propTypes = {
     instruction: PropTypes.string,
     typeName: PropTypes.string
 };
@@ -54,17 +55,15 @@ Extinguisher.propTypes = {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-
-
+        justifyContent: 'center',
+        alignItems: 'center',
 
     },
     welcome: {
-        fontSize: 28,
-        textAlignVertical: 'top',
+        fontSize: 20,
+        textAlign: 'center',
         margin: 10,
         color: '#bb1213',
-        alignItems: 'center',
-        alignItems: 'center',
     },
     imgStyle: {
         width:Dimensions.get('window').width,
@@ -79,4 +78,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Extinguisher;
+export default ScarletScreen;

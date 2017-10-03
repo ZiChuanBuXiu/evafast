@@ -12,18 +12,18 @@ import {
     Action
 } from 'react-native'
 import { Actions } from 'react-native-router-flux';
-import SudokuGrid from 'react-native-smart-sudoku-grid'
-import CornerLabel from 'react-native-smart-corner-label'
+import SudokuGrid from 'react-native-smart-sudoku-grid';
+import CornerLabel from 'react-native-smart-corner-label';
 
-import bandage1 from './bandage1.png'
-import bandage2 from './bandage2.png'
-import bandage3 from './bandage3.png'
-import bandage4 from './bandage4.png'
-import bandage5 from './bandage5.png'
-import bandage6 from './bandage6.png'
-import bandage7 from './bandage7.png'
-import bandage8 from './bandage8.png'
-import bandage9 from './bandage9.png'
+import bandage1 from '../resources/image/bandage/bandage1.png';
+import bandage2 from '../resources/image/bandage/bandage2.png';
+import bandage3 from '../resources/image/bandage/bandage3.png';
+import bandage4 from '../resources/image/bandage/bandage4.png';
+import bandage5 from '../resources/image/bandage/bandage5.png';
+import bandage6 from '../resources/image/bandage/bandage6.png';
+import bandage7 from '../resources/image/bandage/bandage7.png';
+import bandage8 from '../resources/image/bandage/bandage8.png';
+import bandage9 from '../resources/image/bandage/bandage9.png';
 
 const dataList = [
     {

@@ -5,16 +5,16 @@ import {Image, Text, View,StyleSheet} from "react-native";
 let images = {
     Tool: {
         extinguisher1: {
-            images: [require("../image/Tool/extinguisher1/1.png")]
+            images: [require("../resources/image/Tool/extinguisher1/1.png")]
         },
         extinguisher2: {
-            images: [require("../image/Tool/extinguisher2/2.png")]
+            images: [require("../resources/image/Tool/extinguisher2/2.png")]
         },
         firstAid: {
-            images:[require("../image/Tool/firstAid/firstaid.png")]
+            images:[require("../resources/image/Tool/firstAid/firstaid.png")]
         },
         SosSign:{
-            images:[require("../image/Tool/SosSign/SOS.svg.png")]
+            images:[require("../resources/image/Tool/SosSign/SOS.svg.png")]
         }
     }
 

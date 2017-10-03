@@ -10,16 +10,21 @@ import {
     View,
     Image
 } from 'react-native';
-import { Actions } from 'react-native-router-flux';
 
 
-let image = require("./1.jpeg");
-let Video1 = require("./UseOfExtinguisher.mp4");
+let image = require("../resources/image/bandage/1.jpeg");
+let Video1 = require("../resources/video/UseOfExtinguisher.mp4");
 
-const ScarletScreen = () => {
+const Extinguisher = () => {
     return (
 
         <View style={styles.container}>
+            <Text
+                style={styles.welcome}
+            >
+              Please Calm Down!
+            </Text>
+
             <Video source={Video1} // Looks for .mp4 file (background.mp4) in the given expansion version.
                    rate={1.0}                   // 0 is paused, 1 is normal.
                    volume={1.0}                 // 0 is muted, 1 is normal.
@@ -34,19 +39,12 @@ const ScarletScreen = () => {
                    onError={this.videoError}    // Callback when video cannot be loaded
                    style={styles.backgroundVideo} />
 
-            <Image source={image} style={{width:200,height:200}}  />
-            <Text
-                style={styles.welcome}
-                onPress={() => Actions.gray()} // New Code
-            >
-                Scarlet Screen
-            </Text>
 
         </View>
     );
 }
 
-ScarletScreen.propTypes = {
+Extinguisher.propTypes = {
     instruction: PropTypes.string,
     typeName: PropTypes.string
 };
@@ -55,15 +53,17 @@ ScarletScreen.propTypes = {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+
+
 
     },
     welcome: {
-        fontSize: 20,
-        textAlign: 'center',
+        fontSize: 28,
+        textAlignVertical: 'top',
         margin: 10,
         color: '#bb1213',
+        alignItems: 'center',
+        alignItems: 'center',
     },
     imgStyle: {
         width:Dimensions.get('window').width,
@@ -78,4 +78,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default ScarletScreen;
+export default Extinguisher;

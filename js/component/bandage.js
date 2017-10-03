@@ -13,8 +13,8 @@ import {
 import { Actions } from 'react-native-router-flux';
 
 
-let image = require("./1.jpeg");
-let Video1 = require("./UseOfExtinguisher.mp4");
+let image = require("../resources/image/bandage/1.jpeg");
+let Video1 = require("../resources/video/UseOfExtinguisher.mp4");
 
 const Bandage = () => {
     return (

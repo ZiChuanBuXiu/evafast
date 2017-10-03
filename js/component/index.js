@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { Router, Scene, } from 'react-native-router-flux';//引入包
 import {StyleSheet,Text,} from 'react-native';
 
-import ScarletScreen from './ScarletScreen'; //引入文件
-import GrayScreen from './GrayScreen';//引入文件
+import ScarletScreen from './scarlet-screen'; //引入文件
+import GrayScreen from './gray-screen';//引入文件
 import BlueScreen from './BlueScreen';//引入文件
-import HomePage from './HomePage';
-import Extinguisher from './Extinguisher';
-import FirstAid from "./FirstAid";
-import Bandage from "./Bandage"
+import HomePage from './home-page';
+import Extinguisher from './extinguisher';
+import FirstAid from "./first-aid";
+import Bandage from "./bandage"
 
 //引入文件
 
