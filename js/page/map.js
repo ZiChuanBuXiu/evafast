@@ -6,10 +6,12 @@ import {
     Text,
     StatusBar,
     View,
-    ScrollView
+    ScrollView,
+    Dimensions
 } from 'react-native';
 
 const accessToken = 'pk.eyJ1IjoiZnlnMTk4NzYzMCIsImEiOiJjajc4aWoxOGsxcTVhMnFueHlzNzVwOXNwIn0.qDJUwUsopKe51x9tinsP3Q';
+let width = Dimensions.get('window').width;
 Mapbox.setAccessToken(accessToken);
 
 class MapExample extends Component {
@@ -19,9 +21,10 @@ class MapExample extends Component {
             longitude: 144.9637586
         },
         zoom: 17,
-        userTrackingMode: Mapbox.userTrackingMode.follow,
+        userTrackingMode: Mapbox.userTrackingMode.followCourses,
         showsUserLocation: true,
-        annotations: [{
+        annotations: [
+            {
             coordinates: [-37.7996104, 144.9637586],
             type: 'point',
             title: 'This is marker 1',
@@ -187,9 +190,6 @@ class MapExample extends Component {
                     onLongPress={this.onLongPress}
                     onTap={this.onTap}
                 />
-                <ScrollView style={styles.scrollView}>
-                    {this._renderButtons()}
-                </ScrollView>
             </View>
         );
     }
@@ -337,7 +337,8 @@ const styles = StyleSheet.create({
         alignItems: 'stretch'
     },
     map: {
-        flex: 1
+        flex: 1,
+        width: width
     },
     scrollView: {
         flex: 1

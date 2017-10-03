@@ -18,7 +18,7 @@ let images = {
         }
     }
 
-}
+};
 
 
 
@@ -28,7 +28,7 @@ class Instruction extends Component {
         return (
             <View>
                 <Text style={styles.titleText}>{this.props.instruction}</Text>
-                {images.extinguisher[this.props.typeName].images.map(function (image) {
+                {images[this.props.typeName].images.map(function (image) {
                     return (<Image source={image}/>)
                 })}
             </View>
