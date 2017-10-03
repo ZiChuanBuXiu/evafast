@@ -1,19 +1,17 @@
 import React, {Component} from 'react';
-import Mapbox, {
+import {
     setAccessToken,
     MapView, userTrackingMode,
     addOfflinePackProgressListener,
     addOfflineErrorListener,
-    addOfflineMaxAllowedTilesListener
+    addOfflineMaxAllowedTilesListener,
+    Annotation
 } from 'react-native-mapbox-gl';
 import {
-    AppRegistry,
     StyleSheet,
-    Text,
     StatusBar,
     View,
-    ScrollView,
-    Dimensions
+    Dimensions, Image, TouchableOpacity
 } from 'react-native';
 
 const accessToken = 'pk.eyJ1IjoiZnlnMTk4NzYzMCIsImEiOiJjajc4aWoxOGsxcTVhMnFueHlzNzVwOXNwIn0.qDJUwUsopKe51x9tinsP3Q';
@@ -195,7 +193,22 @@ class MapExample extends Component {
                     onUpdateUserLocation={this.onUpdateUserLocation}
                     onLongPress={this.onLongPress}
                     onTap={this.onTap}
-                />
+                >
+                    <Annotation
+                        id="annotation2"
+                        coordinate={{latitude: -37.799424, longitude: 144.962668}}
+                        style={{alignItems: 'center', justifyContent: 'center', position: 'absolute'}}
+                    >
+                        {/*TODO implement onPress function, jump to the instruction page*/}
+                        <TouchableOpacity onPress={() => {
+                        }}>
+                            <Image
+                                style={{width: 20, height: 20}}
+                                source={require("../resources/image/bandage/bandage1.png")}
+                            />
+                        </TouchableOpacity>
+                    </Annotation>
+                </MapView>
             </View>
         );
     }

@@ -7,27 +7,21 @@
 import React, {Component} from 'react';
 import {
     AppRegistry,
-    StyleSheet,
     Text,
-    View
 } from 'react-native';
-import Instruction from "./js/page/instruction";
 import MapExample from "./js/page/map";
-import PageOne from "./js/page/PageOne"
-import App from "./js/page/pageButton";
 import {Router, Scene} from "react-native-router-flux";
 import Extinguisher from "./js/component/extinguisher";
 import FirstAid from "./js/component/first-aid";
 import Bandage from "./js/component/bandage";
 import BlueScreen from "./js/component/blue-screen";
-import ScarletScreen from "./js/component/scarlet-screen";
 import GrayScreen from "./js/component/gray-screen";
-import sos from "./js/component/sos"
+import sos from "./js/component/SOS"
 
 
-const TabIcon = ({ selected, title }) => {
+const TabIcon = ({selected, title}) => {
     return (
-        <Text style={{color: selected ? 'red' :'black'}}>{title}</Text>
+        <Text style={{color: selected ? 'red' : 'black'}}>{title}</Text>
     );
 };
 
@@ -39,7 +33,8 @@ const AndroidApp = () => {
                 <Scene
                     key="tabbar"
                     tabs={true}
-                    tabBarStyle={{ backgroundColor: '#FFFFFF',
+                    tabBarStyle={{
+                        backgroundColor: '#FFFFFF',
                     }}
                 >
                     {/* Tab and it's scenes */}
