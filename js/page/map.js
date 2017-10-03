@@ -21,7 +21,7 @@ class MapExample extends Component {
             longitude: 144.9637586
         },
         zoom: 17,
-        userTrackingMode: Mapbox.userTrackingMode.followCourses,
+        userTrackingMode: Mapbox.userTrackingMode.followWithCourse,
         showsUserLocation: true,
         annotations: [
             {
