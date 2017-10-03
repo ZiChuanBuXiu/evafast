@@ -121,7 +121,7 @@ export default class FirstAid extends Component {
 
         switch (index) {
             case 0:
-                return Actions.Bandage();
+                return Actions.Extinguisher();
             case 1:
                 return Actions.Bandage();
             case 2:

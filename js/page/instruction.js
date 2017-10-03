@@ -28,9 +28,6 @@ class Instruction extends Component {
         return (
             <View>
                 <Text style={styles.titleText}>{this.props.instruction}</Text>
-                {images[this.props.typeName].images.map(function (image) {
-                    return (<Image source={image}/>)
-                })}
             </View>
         );
     }

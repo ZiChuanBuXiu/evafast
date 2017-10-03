@@ -50,11 +50,7 @@ const AndroidApp = () => {
                             title="MAP"
                             initial
                         />
-                        <Scene
-                            key="Extinguisher"
-                            component={Extinguisher}
-                            title="How to use Extinguisher"
-                        />
+
                         <Scene
                             key="FirstAid"
                             component={FirstAid}
