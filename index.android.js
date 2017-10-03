@@ -22,6 +22,7 @@ import Bandage from "./js/component/bandage";
 import BlueScreen from "./js/component/blue-screen";
 import ScarletScreen from "./js/component/scarlet-screen";
 import GrayScreen from "./js/component/gray-screen";
+import SOS from "./js/component/SOS"
 
 
 const TabIcon = ({ selected, title }) => {
@@ -80,11 +81,11 @@ const AndroidApp = () => {
                         />
                     </Scene>
 
-                    <Scene key="um2" title="UM2" icon={TabIcon}>
+                    <Scene key="sos" title="SOS" icon={TabIcon}>
                         <Scene
-                            key="gray2"
-                            component={ScarletScreen}
-                            title="gray2"
+                            key="sosCall"
+                            component={SOS}
+                            title="SOS"
                             initial
                         />
                         <Scene
