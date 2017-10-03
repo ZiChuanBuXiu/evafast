@@ -24,6 +24,13 @@ const SOS = () => {
                 Call 911
 
             </Text>
+            <Text
+                style={styles.welcome}
+                onPress={() => call(args).catch(console.error)} // New Code
+            >
+                FirstAid
+
+            </Text>
         </View>
 
     );
