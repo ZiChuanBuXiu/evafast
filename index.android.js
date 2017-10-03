@@ -22,6 +22,7 @@ import Bandage from "./js/component/bandage";
 import BlueScreen from "./js/component/blue-screen";
 import ScarletScreen from "./js/component/scarlet-screen";
 import GrayScreen from "./js/component/gray-screen";
+import sos from "./js/component/sos"
 
 
 const TabIcon = ({ selected, title }) => {
@@ -49,12 +50,12 @@ const AndroidApp = () => {
                             title="MAP"
                             initial
                         />
-
                         <Scene
-                            key="FirstAid"
-                            component={FirstAid}
-                            title="FirstAid"
+                            key="Extinguisher"
+                            component={Extinguisher}
+                            title="How to use Extinguisher"
                         />
+
                         <Scene
                             key="Bandage"
                             component={Bandage}
@@ -76,12 +77,22 @@ const AndroidApp = () => {
                         />
                     </Scene>
 
-                    <Scene key="um2" title="UM2" icon={TabIcon}>
+                    <Scene key="sos" title="SOS" icon={TabIcon}>
                         <Scene
-                            key="FirstAid1"
-                            component={FirstAid}
-                            title="FirstAid1"
+                            key="sosCall"
+                            component={sos}
+                            title="SOS"
                             initial
+                        />
+                        <Scene
+                            key="gray2"
+                            component={GrayScreen}
+                            title="Gray3"
+                        />
+                        <Scene
+                            key="FirstAid"
+                            component={FirstAid}
+                            title="FirstAid"
                         />
                         <Scene
                             key="Extinguisher"
