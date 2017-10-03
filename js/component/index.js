@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Router, Scene, } from 'react-native-router-flux';//引入包
-import {StyleSheet,Text,} from 'react-native';
+import React, {Component} from 'react';
+import {Router, Scene,} from 'react-native-router-flux';//引入包
+import {StyleSheet, Text,} from 'react-native';
 
 import ScarletScreen from './scarlet-screen'; //引入文件
 import GrayScreen from './gray-screen';//引入文件
@@ -12,9 +12,9 @@ import Bandage from "./bandage"
 
 //引入文件
 
-const TabIcon = ({ selected, title }) => {
+const TabIcon = ({selected, title}) => {
     return (
-        <Text style={{color: selected ? 'red' :'black'}}>{title}</Text>
+        <Text style={{color: selected ? 'red' : 'black'}}>{title}</Text>
     );
 };
 
@@ -26,7 +26,8 @@ const App = () => {
                 <Scene
                     key="tabbar"
                     tabs={true}
-                    tabBarStyle={{ backgroundColor: '#FFFFFF',
+                    tabBarStyle={{
+                        backgroundColor: '#FFFFFF',
                     }}
                 >
                     {/* Tab and it's scenes */}

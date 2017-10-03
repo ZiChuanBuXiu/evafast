@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+
 var Dimensions = require('Dimensions');
 import Video from 'react-native-video';
 
@@ -22,7 +23,7 @@ const Extinguisher = () => {
             <Text
                 style={styles.welcome}
             >
-              Please Calm Down!
+                Please Calm Down!
             </Text>
 
             <Video source={Video1} // Looks for .mp4 file (background.mp4) in the given expansion version.
@@ -37,7 +38,7 @@ const Extinguisher = () => {
                    onProgress={this.setTime}    // Callback every ~250ms with currentTime
                    onEnd={this.onEnd}           // Callback when playback finishes
                    onError={this.videoError}    // Callback when video cannot be loaded
-                   style={styles.backgroundVideo} />
+                   style={styles.backgroundVideo}/>
 
 
         </View>
@@ -55,7 +56,6 @@ const styles = StyleSheet.create({
         flex: 1,
 
 
-
     },
     welcome: {
         fontSize: 28,
@@ -66,8 +66,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     imgStyle: {
-        width:Dimensions.get('window').width,
-        height:150
+        width: Dimensions.get('window').width,
+        height: 150
     },
     backgroundVideo: {
         position: 'absolute',

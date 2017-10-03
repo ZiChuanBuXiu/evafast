@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 var Dimensions = require('Dimensions');
@@ -10,7 +10,7 @@ import {
     View,
     Image
 } from 'react-native';
-import { Actions } from 'react-native-router-flux';
+import {Actions} from 'react-native-router-flux';
 
 
 const HomePage = () => {
@@ -21,7 +21,7 @@ const HomePage = () => {
                 style={styles.welcome}
                 onPress={() => Actions.Extinguisher()} // New Code
             >
-               Extinguisher
+                Extinguisher
             </Text>
             <Text
                 style={styles.welcome}
@@ -53,8 +53,8 @@ const styles = StyleSheet.create({
         color: '#bb1213',
     },
     imgStyle: {
-        width:Dimensions.get('window').width,
-        height:150
+        width: Dimensions.get('window').width,
+        height: 150
     },
 });
 

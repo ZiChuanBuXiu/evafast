@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+
 var Dimensions = require('Dimensions');
 import Video from 'react-native-video';
 
@@ -10,7 +11,7 @@ import {
     View,
     Image
 } from 'react-native';
-import { Actions } from 'react-native-router-flux';
+import {Actions} from 'react-native-router-flux';
 
 
 let image = require("../resources/image/bandage/1.jpeg");
@@ -32,9 +33,9 @@ const ScarletScreen = () => {
                    onProgress={this.setTime}    // Callback every ~250ms with currentTime
                    onEnd={this.onEnd}           // Callback when playback finishes
                    onError={this.videoError}    // Callback when video cannot be loaded
-                   style={styles.backgroundVideo} />
+                   style={styles.backgroundVideo}/>
 
-            <Image source={image} style={{width:200,height:200}}  />
+            <Image source={image} style={{width: 200, height: 200}}/>
             <Text
                 style={styles.welcome}
                 onPress={() => Actions.gray()} // New Code
@@ -66,8 +67,8 @@ const styles = StyleSheet.create({
         color: '#bb1213',
     },
     imgStyle: {
-        width:Dimensions.get('window').width,
-        height:150
+        width: Dimensions.get('window').width,
+        height: 150
     },
     backgroundVideo: {
         position: 'absolute',
