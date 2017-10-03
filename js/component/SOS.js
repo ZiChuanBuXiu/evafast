@@ -13,7 +13,7 @@ import {
 import { Actions } from 'react-native-router-flux';
 
 
-const SOS = () => {
+const sos = () => {
     return (
 
         <View style={styles.container}>
@@ -21,16 +21,15 @@ const SOS = () => {
                 style={styles.welcome}
                 onPress={() => call(args).catch(console.error)} // New Code
             >
-                Call 911
-
+                Call 000
             </Text>
             <Text
                 style={styles.welcome}
-                onPress={() => call(args).catch(console.error)} // New Code
+                onPress={() => Actions.FirstAid()} // New Code
             >
                 FirstAid
-
             </Text>
+
         </View>
 
     );
@@ -64,4 +63,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default SOS;
+export default sos;
