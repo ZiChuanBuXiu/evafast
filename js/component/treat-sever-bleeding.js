@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 
 
-let Video1 = require("../resources/video/Treat_sever_bleeding_tutorial.mp4");
+let Video1 = require("../resources/video/Treat_sever_bleeding_tutorial.3gp");
 
 const severBleeding = () => {
     return (
