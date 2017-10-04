@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
         margin: 10,
         color: '#bb1213',
         alignItems: 'center',
-        alignItems: 'center',
+
     },
     imgStyle: {
         width: Dimensions.get('window').width,
