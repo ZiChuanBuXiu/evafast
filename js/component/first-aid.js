@@ -142,8 +142,6 @@ export default class FirstAid extends Component {
                 return Actions.severBleeding();
             case 8:
                 return Actions.burnAndScald();
-            case 9:
-                return Actions.Bandage();
         }
     }
 

@@ -25,7 +25,7 @@ const TriBandage = () => {
                    volume={1.0}                 // 0 is muted, 1 is normal.
                    muted={false}                // Mutes the audio entirely.
                    paused={false}               // Pauses playback entirely.
-                   resizeMode="stretch"           // Fill the whole screen at aspect ratio.
+                   resizeMode="contain"           // Fill the whole screen at aspect ratio.
                    repeat={false}                // Repeat forever.
                    onLoadStart={this.loadStart} // Callback when video starts to load
                    onLoad={this.setDuration}    // Callback when video loads
