@@ -7,7 +7,7 @@
 import React, {Component} from 'react';
 import {
     AppRegistry,
-    Text,
+    Text, View,
 } from 'react-native';
 import MapExample from "./js/page/map";
 import {Router, Scene} from "react-native-router-flux";

@@ -15,6 +15,7 @@ import Extinguisher from "./js/component/extinguisher";
 import FirstAid from "./js/component/first-aid";
 import Bandage from "./js/component/bandage";
 import BlueScreen from "./js/component/blue-screen";
+import TriBandage from "./js/component/triangular-bandage";
 
 
 const TabIcon = ({selected, title}) => {
@@ -80,6 +81,11 @@ const AndroidApp = () => {
                         <Scene
                             key="Extinguisher"
                             component={Extinguisher}
+                            title="How to use Extinguisher"
+                        />
+                        <Scene
+                            key="TriBandage"
+                            component={TriBandage}
                             title="How to use Extinguisher"
                         />
                     </Scene>

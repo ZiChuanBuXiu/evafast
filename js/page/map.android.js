@@ -11,9 +11,10 @@ import {
     StyleSheet,
     StatusBar,
     View,
-    Dimensions, Image, TouchableOpacity, Platform, TouchableWithoutFeedback
+    Dimensions, Image, TouchableOpacity, Platform, TouchableWithoutFeedback, ActivityIndicator, Text
 } from 'react-native';
 import {Actions} from 'react-native-router-flux';
+
 
 const accessToken = 'pk.eyJ1IjoiZnlnMTk4NzYzMCIsImEiOiJjajc4aWoxOGsxcTVhMnFueHlzNzVwOXNwIn0.qDJUwUsopKe51x9tinsP3Q';
 let width = Dimensions.get('window').width;
@@ -31,8 +32,28 @@ class MapExample extends Component {
         userLocation: {
             latitude: -37.799441,
             longitude: 144.962952
-        }
+        },
+        isLoading: true
     };
+
+
+    componentDidMount() {
+        return fetch('https://facebook.github.io/react-native/movies.json', {
+            method: 'GET'
+        })
+            .then((response) => response.json())
+            .then((responseJson) => {
+                this.setState({
+                    isLoading: false,
+                    dataSource: responseJson,
+                }, function () {
+                    // do something with new state
+                });
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
 
     onRegionDidChange = (location) => {
         this.setState({currentZoom: location.zoomLevel});
@@ -80,9 +101,40 @@ class MapExample extends Component {
     }
 
     render() {
-        StatusBar.setHidden(true);
+        StatusBar.setHidden(false);
+        if (this.state.isLoading) {
+            return (
+                <View style={{flex: 1, paddingTop: 20}}>
+                    <ActivityIndicator/>
+                </View>
+            );
+        }
+        // let items = this.state.dataSource.message.items;
+        // let annotations = [];
+
+        // for (let property in items) {
+        //     if (items.hasOwnProperty(property)) {
+        //         // do stuff
+        //         for (let element in items[property]) {
+        //             let coordinates = element.coordinates;
+        //             annotations.push(<Annotation
+        //                 coordinate={{
+        //                     latitude: coordinates.latitude,
+        //                     longitude: coordinates.longitude
+        //                 }}
+        //                 style={{alignItems: 'center', justifyContent: 'center', position: 'absolute'}}>
+        //                 <Image
+        //                     style={{width: 35, height: 35}}
+        //                     source={require("../resources/image/building/" + property + ".png")}
+        //                 />
+        //             </Annotation>)
+        //         }
+        //     }
+        // }
+
         return (
             <View style={styles.container}>
+
                 <MapView
                     ref={map => {
                         this._map = map;
@@ -109,7 +161,7 @@ class MapExample extends Component {
                     onTap={this.onTap}
                 >
                     <Annotation
-                        id="annotation2"
+                        id="fire-extinguisher"
                         coordinate={{latitude: -37.799424, longitude: 144.962668}}
                         style={{alignItems: 'center', justifyContent: 'center', position: 'absolute'}}
 
@@ -118,7 +170,7 @@ class MapExample extends Component {
                         <TouchableOpacity
                             style={{width: 30, height: 30}}
                             onPress={() => {
-                                Actions.FirstAid()
+                                Actions.Extinguisher()
                             }}
                         >
                             <Image
@@ -129,13 +181,44 @@ class MapExample extends Component {
                         </TouchableOpacity>
                     </Annotation>
                     <Annotation
-                        id="user-position"
+                        id={"user"}
                         coordinate={this.state.userLocation}
                         style={{alignItems: 'center', justifyContent: 'center', position: 'absolute'}}>
                         <Image
                             style={{width: 35, height: 35}}
                             source={require("../resources/image/user/man.png")}
                         />
+                    </Annotation>
+                    <Annotation
+                        id={"exit"}
+                        coordinate={{
+                            latitude: -37.799495,
+                            longitude: 144.962944
+                        }}
+                        style={{alignItems: 'center', justifyContent: 'center', position: 'absolute'}}>
+                        <Image
+                            style={{width: 35, height: 35}}
+                            source={require("../resources/image/building/exit.png")}
+                        />
+                    </Annotation>
+                    <Annotation
+                        id={"first-aid"}
+                        coordinate={{
+                            latitude: -37.799308,
+                            longitude: 144.963065
+                        }}
+                        style={{alignItems: 'center', justifyContent: 'center', position: 'absolute'}}>
+                        <TouchableOpacity
+                            style={{width: 30, height: 30}}
+                            onPress={() => {
+                                Actions.FirstAid()
+                            }}
+                        >
+                            <Image
+                                style={{width: 30, height: 30}}
+                                source={require("../resources/image/building/first-aid.png")}
+                            />
+                        </TouchableOpacity>
                     </Annotation>
                 </MapView>
             </View>
