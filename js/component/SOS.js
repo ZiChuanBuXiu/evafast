@@ -10,11 +10,12 @@ import {
     Text,
     TouchableHighlight,
     Alert,
-    Action
+    Action,
+    TouchableOpacity
 } from 'react-native'
 
 
-
+import Communications from 'react-native-communications';
 import { Actions } from 'react-native-router-flux';
 import SudokuGrid from 'react-native-smart-sudoku-grid'
 import CornerLabel from 'react-native-smart-corner-label'
@@ -103,22 +104,14 @@ export default class SOS extends Component {
             case 2:
                 return Actions.FirstAid();
             case 3:
-                return
-                SendSMS.send({
-                    body: 'The default body of the SMS!',
-                    recipients: ['0123456789', '9876543210'],
-                    successTypes: ['sent', 'queued']
-                }, (completed, cancelled, error) => {
-
-                    console.log('SMS Callback: completed: ' + completed + ' cancelled: ' + cancelled + 'error: ' + error);
-
-                });;
+                return Communications.text('family_Group');
 
         }
     }
 
 
 
-}
+};
+
 
 
