@@ -29,9 +29,14 @@ import severBleeding from "./js/component/treat-sever-bleeding";
 import burnAndScald from "./js/component/treat-burn-and-scald";
 
 
-const TabIcon = ({selected, title}) => {
+
+const TabIcon = ({title,t}) => {
     return (
-        <Text style={{color: selected ? 'red' : 'black'}}>{title}</Text>
+        <Text>{title}</Text>,
+            <Text style={{fontSize: 20,
+                fontWeight: 'bold',
+}
+                }>{t}</Text>
     );
 };
 
@@ -48,7 +53,7 @@ const AndroidApp = () => {
                     }}
                 >
                     {/* Tab and it's scenes */}
-                    <Scene key="Map" title="MAP" icon={TabIcon}>
+                    <Scene key=" " title="" t={'MAP'} icon={TabIcon}>
                         <Scene
                             key="HomePage"
                             component={MapExample}
@@ -68,7 +73,7 @@ const AndroidApp = () => {
                         />
                     </Scene>
 
-                    <Scene key="um" title="Pacman" icon={TabIcon}>
+                    <Scene key="  " title="" t={'Pacman'} icon={TabIcon}>
                         <Scene
                             key="Blue"
                             component={BlueScreen}
@@ -82,7 +87,7 @@ const AndroidApp = () => {
                         />
                     </Scene>
 
-                    <Scene key="sos" title="SOS" icon={TabIcon}>
+                    <Scene key="   " title="" t={'SOS'} icon={TabIcon}>
                         <Scene
                             key="sosCall"
                             component={sos}
