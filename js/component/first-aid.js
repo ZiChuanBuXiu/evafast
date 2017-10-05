@@ -30,11 +30,11 @@ import Thermometer from '../resources/image/FirstAid/thermometer.png'
 const dataList = [
     {
         icon: Asthma_inhaler,
-        title: 'Asthma_inhaler',
+        title: 'Inhaler',
     },
     {
         icon: Triangular_bandage,
-        title: 'Triangular_bandage',
+        title: 'Bandage',
     },
     {
         icon: cold_pack,
@@ -54,16 +54,16 @@ const dataList = [
     },
     {
         icon: Plasters,
-        title: 'Treat_shock_tutorial',
+        title: 'Treat_shock',
     },
 
     {
         icon: Surgical_scissors,
-        title: 'Treat_sever_bleeding_tutorial',
+        title: 'Treat_sever_bleeding',
     },
     {
         icon: Capsules,
-        title: 'Treat_burns_and_scalds_tutorial',
+        title: 'Treat_burns',
     },
 
 ]
@@ -101,21 +101,7 @@ export default class FirstAid extends Component {
                     borderRightWidth: (index + 1) % columnCount ? StyleSheet.hairlineWidth: 0, }}>
                     <Image source={data.icon} style={{width: 30, height: 30, marginHorizontal: 10, marginBottom: 10,}}/>
                     <Text>{data.title}</Text>
-                    { index == 6 ?
-                        <CornerLabel
-                            cornerRadius={54}
-                            style={{backgroundColor: 'red', height: 24,}}
-                            textStyle={{color: '#fff', }}>
-                            usefull
-                        </CornerLabel> : index == 3 ?
-                            <CornerLabel
-                                alignment={'right'}
-                                cornerRadius={54}
-                                style={{backgroundColor: 'red', height: 24,}}
-                                textStyle={{color: '#fff', fontSize: 12,}}>
-                                useful
-                            </CornerLabel> : null
-                    }
+
                 </View>
             </TouchableHighlight>
         )
