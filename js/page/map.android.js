@@ -11,8 +11,9 @@ import {
     StyleSheet,
     StatusBar,
     View,
-    Dimensions, Image, TouchableOpacity
+    Dimensions, Image, TouchableOpacity, Platform, TouchableWithoutFeedback
 } from 'react-native';
+import {Actions} from 'react-native-router-flux';
 
 const accessToken = 'pk.eyJ1IjoiZnlnMTk4NzYzMCIsImEiOiJjajc4aWoxOGsxcTVhMnFueHlzNzVwOXNwIn0.qDJUwUsopKe51x9tinsP3Q';
 let width = Dimensions.get('window').width;
@@ -25,8 +26,8 @@ class MapExample extends Component {
             longitude: 144.9637586
         },
         zoom: 17,
-        userTrackingMode: userTrackingMode.followWithCourse,
-        showsUserLocation: true,
+        userTrackingMode: userTrackingMode.none,
+        showsUserLocation: false,
         annotations: [
             {
                 coordinates: [-37.7996104, 144.9637586],
@@ -69,7 +70,11 @@ class MapExample extends Component {
                 strokeColor: '#ffffff',
                 fillColor: '#0000ff',
                 id: 'zap'
-            }]
+            }],
+        userLocation: {
+            latitude: -37.7996104,
+            longitude: 144.9637586
+        }
     };
 
     onRegionDidChange = (location) => {
@@ -198,15 +203,30 @@ class MapExample extends Component {
                         id="annotation2"
                         coordinate={{latitude: -37.799424, longitude: 144.962668}}
                         style={{alignItems: 'center', justifyContent: 'center', position: 'absolute'}}
+
                     >
                         {/*TODO implement onPress function, jump to the instruction page*/}
-                        <TouchableOpacity onPress={() => {
-                        }}>
+                        <TouchableOpacity
+                            style={{width: 30, height: 30}}
+                            onPress={() => {
+                                Actions.FirstAid()
+                            }}
+                        >
                             <Image
-                                style={{width: 20, height: 20}}
+                                style={{width: 30, height: 30}}
                                 source={require("../resources/image/bandage/bandage1.png")}
+
                             />
                         </TouchableOpacity>
+                    </Annotation>
+                    <Annotation
+                        id="user-position"
+                        coordinate={this.state.userLocation}
+                        style={{alignItems: 'center', justifyContent: 'center', position: 'absolute'}}>
+                        <Image
+                            style={{width: 25, height: 25}}
+                            source={require("../resources/image/bandage/bandage1.png")}
+                        />
                     </Annotation>
                 </MapView>
             </View>

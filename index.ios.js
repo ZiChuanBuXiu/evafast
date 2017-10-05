@@ -17,10 +17,9 @@ import Bandage from "./js/component/bandage";
 import BlueScreen from "./js/component/blue-screen";
 
 
-
-const TabIcon = ({ selected, title }) => {
+const TabIcon = ({selected, title}) => {
     return (
-        <Text style={{color: selected ? 'red' :'black'}}>{title}</Text>
+        <Text style={{color: selected ? 'red' : 'black'}}>{title}</Text>
     );
 };
 
@@ -32,7 +31,8 @@ const AndroidApp = () => {
                 <Scene
                     key="tabbar"
                     tabs={true}
-                    tabBarStyle={{ backgroundColor: '#FFFFFF',
+                    tabBarStyle={{
+                        backgroundColor: '#FFFFFF',
                     }}
                 >
                     {/* Tab and it's scenes */}
