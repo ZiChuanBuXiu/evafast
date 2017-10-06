@@ -38,7 +38,7 @@ class MapExample extends Component {
 
 
     componentDidMount() {
-        return fetch('https://facebook.github.io/react-native/movies.json', {
+        return fetch('http://mobile.kancolle.moe/api/map/download?building-id=1', {
             method: 'GET'
         })
             .then((response) => response.json())
@@ -109,29 +109,8 @@ class MapExample extends Component {
                 </View>
             );
         }
-        // let items = this.state.dataSource.message.items;
-        // let annotations = [];
 
-        // for (let property in items) {
-        //     if (items.hasOwnProperty(property)) {
-        //         // do stuff
-        //         for (let element in items[property]) {
-        //             let coordinates = element.coordinates;
-        //             annotations.push(<Annotation
-        //                 coordinate={{
-        //                     latitude: coordinates.latitude,
-        //                     longitude: coordinates.longitude
-        //                 }}
-        //                 style={{alignItems: 'center', justifyContent: 'center', position: 'absolute'}}>
-        //                 <Image
-        //                     style={{width: 35, height: 35}}
-        //                     source={require("../resources/image/building/" + property + ".png")}
-        //                 />
-        //             </Annotation>)
-        //         }
-        //     }
-        // }
-
+        console.log(this.state.dataSource);
         return (
             <View style={styles.container}>
 
@@ -162,7 +141,10 @@ class MapExample extends Component {
                 >
                     <Annotation
                         id="fire-extinguisher"
-                        coordinate={{latitude: -37.799424, longitude: 144.962668}}
+                        coordinate={{
+                            latitude: this.state.dataSource.data.items["fire-extinguisher"][0].coordinates.latitude,
+                            longitude: this.state.dataSource.data.items["fire-extinguisher"][0].coordinates.longitude
+                        }}
                         style={{alignItems: 'center', justifyContent: 'center', position: 'absolute'}}
 
                     >
@@ -192,8 +174,8 @@ class MapExample extends Component {
                     <Annotation
                         id={"exit"}
                         coordinate={{
-                            latitude: -37.799495,
-                            longitude: 144.962944
+                            latitude: this.state.dataSource.data.items["exit"][0].coordinates.latitude,
+                            longitude: this.state.dataSource.data.items["exit"][0].coordinates.longitude
                         }}
                         style={{alignItems: 'center', justifyContent: 'center', position: 'absolute'}}>
                         <Image
@@ -204,8 +186,8 @@ class MapExample extends Component {
                     <Annotation
                         id={"first-aid"}
                         coordinate={{
-                            latitude: -37.799308,
-                            longitude: 144.963065
+                            latitude: this.state.dataSource.data.items["first-aid"][0].coordinates.latitude,
+                            longitude: this.state.dataSource.data.items["first-aid"][0].coordinates.longitude
                         }}
                         style={{alignItems: 'center', justifyContent: 'center', position: 'absolute'}}>
                         <TouchableOpacity
